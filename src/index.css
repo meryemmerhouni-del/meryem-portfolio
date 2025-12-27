@@ -1,0 +1,265 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom animations */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gradient-to-b from-blue-500 to-purple-500 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply from-blue-600 to-purple-600;
+}
+
+/* Contact form animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Input focus effects */
+input:focus, textarea:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.3);
+
+}
+/* Dark mode styles */
+.dark {
+  color-scheme: dark;
+}
+
+.dark body {
+  @apply bg-gray-900 text-gray-100;
+}
+
+/* Custom dark mode scrollbar */
+.dark ::-webkit-scrollbar-track {
+  @apply bg-gray-800;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  @apply bg-gradient-to-b from-gray-700 to-gray-600;
+}
+
+/* Smooth transitions */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+/* Theme transition animations */
+.theme-transition * {
+  transition: background-color 0.5s ease, 
+              border-color 0.5s ease, 
+              color 0.5s ease,
+              fill 0.5s ease;
+}
+
+/* Dark mode specific animations */
+@keyframes dark-glow {
+  0%, 100% { box-shadow: 0 0 5px rgba(59, 130, 246, 0.5); }
+  50% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.8); }
+}
+
+.dark .dark-glow {
+  animation: dark-glow 2s infinite;
+}
+/* Theme transition animations */
+@keyframes lightToDark {
+  0% {
+    background: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(0px);
+  }
+  50% {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+  }
+  100% {
+    background: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(0px);
+  }
+}
+
+@keyframes darkToLight {
+  0% {
+    background: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(0px);
+  }
+  50% {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+  }
+  100% {
+    background: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(0px);
+  }
+}
+
+.animate-light-to-dark {
+  animation: lightToDark 0.6s ease-in-out forwards;
+}
+
+.animate-dark-to-light {
+  animation: darkToLight 0.6s ease-in-out forwards;
+}
+
+/* Smooth page transitions */
+* {
+  transition: background-color 0.3s ease, 
+              border-color 0.3s ease, 
+              color 0.3s ease,
+              fill 0.3s ease,
+              transform 0.3s ease;
+}
+
+/*For a more dramatic effect, uncomment this: */
+
+.page-transition {
+  position: relative;
+}
+
+.page-transition::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.page-transition.theme-changing::before {
+  opacity: 1;
+  background: linear-gradient(45deg, 
+    rgba(59, 130, 246, 0.1) 0%, 
+    rgba(139, 92, 246, 0.1) 50%, 
+    rgba(236, 72, 153, 0.1) 100%);
+}
+/* Ripple animations */
+@keyframes rippleLight {
+  0% {
+    transform: scale(0);
+    opacity: 0.5;
+    background: linear-gradient(45deg, 
+      rgba(219, 234, 254, 0.1) 0%, 
+      rgba(233, 213, 255, 0.1) 50%, 
+      rgba(254, 205, 211, 0.1) 100%);
+  }
+  100% {
+    transform: scale(100);
+    opacity: 0;
+    background: linear-gradient(45deg, 
+      rgba(219, 234, 254, 0) 0%, 
+      rgba(233, 213, 255, 0) 50%, 
+      rgba(254, 205, 211, 0) 100%);
+  }
+}
+
+@keyframes rippleDark {
+  0% {
+    transform: scale(0);
+    opacity: 0.5;
+    background: linear-gradient(45deg, 
+      rgba(30, 41, 59, 0.1) 0%, 
+      rgba(30, 41, 59, 0.1) 50%, 
+      rgba(30, 41, 59, 0.1) 100%);
+  }
+  100% {
+    transform: scale(100);
+    opacity: 0;
+    background: linear-gradient(45deg, 
+      rgba(30, 41, 59, 0) 0%, 
+      rgba(30, 41, 59, 0) 50%, 
+      rgba(30, 41, 59, 0) 100%);
+  }
+}
+
+.animate-ripple-light {
+  animation: rippleLight 0.6s ease-out forwards;
+}
+
+.animate-ripple-dark {
+  animation: rippleDark 0.6s ease-out forwards;
+}
+
+/* Orbit animations */
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(8px) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(8px) rotate(-360deg); }
+}
+
+@keyframes orbitReverse {
+  from { transform: rotate(0deg) translateX(8px) rotate(0deg); }
+  to { transform: rotate(-360deg) translateX(8px) rotate(360deg); }
+}
+
+.animate-orbit-fast {
+  animation: orbit 1s linear infinite;
+}
+
+.animate-orbit-medium {
+  animation: orbit 2s linear infinite;
+}
+
+.animate-orbit-slow {
+  animation: orbit 3s linear infinite;
+}
+
+.animate-orbit-reverse {
+  animation: orbitReverse 2.5s linear infinite;
+}
+/* FORCE DARK MODE ON ALL SECTIONS - SOLUTION D'URGENCE */
+.dark .bg-white {
+  background-color: #1f2937 !important; /* gray-800 */
+}
+
+.dark .text-gray-900 {
+  color: #f9fafb !important; /* gray-50 */
+}
+
+.dark .text-gray-700 {
+  color: #d1d5db !important; /* gray-300 */
+}
+
+.dark .text-gray-600 {
+  color: #9ca3af !important; /* gray-400 */
+}
+
+.dark .bg-gray-50, .dark .bg-gray-100 {
+  background-color: #111827 !important; /* gray-900 */
+}
+
+.dark .border-gray-200, .dark .border-gray-300 {
+  border-color: #374151 !important; /* gray-700 */
+}
+
+.dark .shadow-lg {
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5) !important;
+}
