@@ -122,7 +122,7 @@ const Skills = () => {
       skills: ["Data Exploration", "Statistical Analysis", "Data Cleaning", "Visualization"],
       icon: <Database className="text-purple-500" />,
       color: "bg-gradient-to-r from-purple-500 to-pink-500",
-      certificateUrl: "/certificates/data_exploratory_certificate.pdf", // Replace with actual file path
+      certificateUrl: "/certificates/data_explo.pdf", // Replace with actual file path
       certificateId: "DC-Exploratory-2024-1213"
     },
   ];

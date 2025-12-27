@@ -8,7 +8,7 @@ export const experiences = [
     duration: "Nov 2025 - Present • 2 months",
     location: "Algiers, Algeria",
     workMode: "Hybrid",
-    skills: ["Data Analysis", "PowerBI", "Data Visualization", "Statistics"]
+    skills: ["Data Analysis", "PowerBI", "Data Visualization"]
   },
   {
     id: 2,

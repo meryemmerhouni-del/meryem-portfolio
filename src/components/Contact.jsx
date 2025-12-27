@@ -59,13 +59,8 @@ const Contact = () => {
       name: "LinkedIn",
       link: "https://www.linkedin.com/in/meryem-merhouni-6b1648333/", // ← ADD YOUR LINKEDIN
       color: "hover:bg-blue-700 hover:text-white dark:hover:bg-blue-600"
-    },
-    {
-      icon: <MessageSquare size={24} />,
-      name: "Other",
-      link: "#contact",
-      color: "hover:bg-sky-500 hover:text-white dark:hover:bg-sky-600"
     }
+
   ];
 
   const handleChange = (e) => {

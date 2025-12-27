@@ -96,7 +96,6 @@ const Footer = () => {
           <div className="mb-4 md:mb-0">
             <p className="text-gray-500 text-sm flex items-center  gap-2">
               Always learning • Passionate about AI • Open to opportunities
-              <Heart className="inline w-4 h-4 text-red-500" />
             </p>
             
           </div>
